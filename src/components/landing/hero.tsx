@@ -73,6 +73,7 @@ export default function Hero({
                     alt="Test"
                     width={300}
                     height={300}
+                    unoptimized
                   />
                 </div>
               </div>
@@ -88,7 +89,7 @@ export default function Hero({
             <p className="max-w-[600px] text-xl text-darkGreen md:text-2xl">
               {subtitle}
             </p>
-            <p className="max-w-[600px] text-white md:text-xl">{description}</p>
+            <p className="max-w-[600px] text-black md:text-xl">{description}</p>
           </div>
           <motion.div
             initial={{ scale: 0.95 }}

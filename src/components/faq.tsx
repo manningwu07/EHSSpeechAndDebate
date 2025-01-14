@@ -15,8 +15,6 @@ interface FAQ {
 }
 
 export default function FAQSection({title, subtitle, faqData}: FAQ) {
-  console.log("faqData", faqData);
-  
   return (
     <div id="FAQ-section" className="mt-8 mb-14">
       <h2 className="my-2 text-center text-2xl sm:text-3xl md:text-4xl md:font-bold">{title}</h2>

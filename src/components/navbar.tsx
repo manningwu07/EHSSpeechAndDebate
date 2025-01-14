@@ -11,7 +11,7 @@ interface NavbarProps {
 
 export default function Navbar({ links }: NavbarProps) {
   return (
-    <header className="sticky top-0 z-50 flex w-full justify-center backdrop-blur supports-[backdrop-filter]:bg-white/40">
+    <header className="sticky top-0 z-50 flex w-full justify-center backdrop-blur supports-[backdrop-filter]:bg-darkGreen/10">
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex items-center space-x-2">
           <Link href="/" className="flex items-center space-x-2">

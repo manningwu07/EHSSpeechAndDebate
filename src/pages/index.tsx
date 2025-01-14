@@ -1,5 +1,6 @@
 import Head from "next/head";
 import LandingPage from "./LandingPage";
+import keywords from "~/utils/keywords.json";
 
 export default function Home() {
   return (
@@ -10,9 +11,11 @@ export default function Home() {
           name="description"
           content="Emerald High School's Speech and Debate Club, empowering youth voices and fostering a culture of fair discourse."
         />
+        <meta property="og:title" content="Emerald Speech & Debate Club - EHS" />
+        <meta name="keywords" content={keywords.keywords.join(', ')} />
         <meta
           name="keywords"
-          content="EHS, Emerald High School, Speech, Debate, Dublin CA, High School, Club, Emerald Speech & Debate Club"
+          content="EHS, Emerald High School, Speech, Debate, Dublin CA, High School, Club, Emerald Speech & Debate Club, ehs speech and debate, EHS speech and debate"
         />
         <meta name="author" content="Emerald Speech & Debate Club, Manning Wu" />
         <meta
