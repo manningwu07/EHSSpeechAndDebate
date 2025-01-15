@@ -1,7 +1,11 @@
 import Link from "next/link";
 import type { DataStructure } from "~/utils/dataStructure";
 
-export default function Mentor({mentorContent}: {mentorContent: DataStructure["parents"]["mentor"]}) {
+export default function Mentor({
+  mentorContent,
+}: {
+  mentorContent: DataStructure["parents"]["mentor"];
+}) {
   return (
     <div className="space-y-8">
       <section>
@@ -11,8 +15,10 @@ export default function Mentor({mentorContent}: {mentorContent: DataStructure["p
 
         {/* Iframe for Be a Mentor Guide */}
         <iframe
-          src={mentorContent.videoSrc}
+          src={mentorContent.videoSrc.replace("watch?v=", "embed/")}
           title="Be a Mentor Guide"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
           className="w-full rounded-lg border sm:h-64 md:h-96 lg:h-[480px] 2xl:h-[640px]"
         ></iframe>
 

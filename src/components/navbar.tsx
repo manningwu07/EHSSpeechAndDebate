@@ -7,9 +7,10 @@ import type { NavLink } from "~/types/components";
 
 interface NavbarProps {
   links: NavLink[];
+  joinLink: string;
 }
 
-export default function Navbar({ links }: NavbarProps) {
+export default function Navbar({ links, joinLink }: NavbarProps) {
   return (
     <header className="sticky top-0 z-50 flex w-full justify-center backdrop-blur supports-[backdrop-filter]:bg-darkGreen/10">
       <div className="container flex h-16 items-center">
@@ -32,7 +33,7 @@ export default function Navbar({ links }: NavbarProps) {
             {links.map((link, index) => (
               <Link
                 key={index}
-                href={link.href}
+                href={link.join ? joinLink : link.href}
                 className={`text-sm font-medium text-darkGreen transition-colors hover:underline`}
               >
                 {link.text}
@@ -58,12 +59,12 @@ export default function Navbar({ links }: NavbarProps) {
                 <nav className="flex flex-col space-y-4">
                   {links.map((link, index) => (
                     <Link
-                      key={index}
-                      href={link.href}
-                      className={`text-sm font-medium transition-colors hover:underline ${link.join ? "text-emerald-300" : "text-white"}}`}
-                    >
-                      {link.text}
-                    </Link>
+                    key={index}
+                    href={link.join ? joinLink : link.href}
+                    className={`text-sm font-medium text-darkGreen transition-colors hover:underline`}
+                  >
+                    {link.text}
+                  </Link>
                   ))}
                 </nav>
               </SheetContent>

@@ -31,17 +31,17 @@ export default function JudgeTrainingPage({
         <ImageSection
           title={judgeContent.ballotTitle}
           description={judgeContent.ballotDescription}
-          imageSrc={judgeContent.ballotImage}
-          imageAlt="Example of a Ballot"
-          footerText="Example of a paper ballot from a public forum."
+          imageSrc={judgeContent.ballotImage.src}
+          imageAlt={judgeContent.ballotImage.captions}
+          footerText={judgeContent.ballotImage.captions}
         />
 
         <ImageSection
           title={judgeContent.paradigmTitle}
           description={judgeContent.paradigmDescription}
-          imageSrc={judgeContent.paradigmImage}
-          imageAlt="Paradigm Template"
-          footerText="Template to follow for setting up your judging paradigm."
+          imageSrc={judgeContent.paradigmImage.src}
+          imageAlt={judgeContent.paradigmImage.captions}
+          footerText={judgeContent.paradigmImage.captions}
         />
 
         <TabroomSection
@@ -55,13 +55,13 @@ export default function JudgeTrainingPage({
 }
 
 // Reusable Video Embed Section
-function VideoSection({ description, embedUrl }) {
+function VideoSection({ description, embedUrl }: {description: string, embedUrl: string}) {
   return (
     <section className="space-y-4 text-center">
       <p className="text-lg">{description}</p>
       <div className="aspect-w-16 aspect-h-9">
         <iframe
-          src={embedUrl}
+          src={embedUrl.replace("watch?v=", "embed/")}
           title="Judge Training Video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -100,13 +100,14 @@ function VideoList({ title, videos }: {title: string, videos: DataStructure["par
       <h2 className="text-center text-3xl font-bold">{title}</h2>
       <div className="grid grid-cols-1 gap-4">
         {videos.map((video, index) => (
-          <button
+          <Link
+            href={video.href}
             key={index}
             className="flex items-center justify-center gap-2 rounded-md bg-darkGreen px-4 py-3 font-semibold text-white hover:bg-darkGreen/90"
           >
             <VideoIcon className="h-5 w-5" />
-            {video}
-          </button>
+            {video.label}
+          </Link>
         ))}
       </div>
     </section>

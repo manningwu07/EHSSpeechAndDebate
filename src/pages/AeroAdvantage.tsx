@@ -33,9 +33,7 @@ export default function AEROPage({ adminContent, adminError }: PageProps) {
   }
 
   const {
-    title,
-    description,
-    priceText,
+    opener,
     photos,
     locationAndDatesSection,
     teamTitle,
@@ -44,22 +42,22 @@ export default function AEROPage({ adminContent, adminError }: PageProps) {
 
   return (
     <>
-      <Navbar {...navigation.navigation} />
+      <Navbar links = {navigation.navigation.links} joinLink={content.components.joinLink}/>
       <div className="container mx-auto max-w-6xl px-4 py-12">
         <section className="mb-8 space-y-8 md:mb-12">
           <h1 className="text-center text-4xl font-bold text-darkGreen md:text-5xl">
-            {title}
+            {opener.title}
           </h1>
           <div className="grid items-center gap-8 md:grid-cols-2">
             <div className="space-y-6">
-              <p>{description}</p>
+              <p>{opener.description}</p>
               <p className="text-4xl text-gray-700">
-                <span className="font-bold text-darkGreen">{priceText}</span>
+                <span className="font-bold text-darkGreen">{opener.priceText}</span>
               </p>
               <div className="flex justify-center md:block">
-                <Link href="/" className="mx-auto md:mx-0">
+                <Link href={content.components.joinLink} className="mx-auto md:mx-0">
                   <Button className="rounded-full bg-darkGreen px-8 py-6 text-lg text-white hover:bg-darkGreen/90">
-                    Sign up now
+                    {opener.cta}
                   </Button>
                 </Link>
               </div>

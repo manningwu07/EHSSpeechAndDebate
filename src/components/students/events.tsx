@@ -35,16 +35,21 @@ export default function Events({upcomingEvents}: {upcomingEvents: DataStructure[
                     <div className="mt-2 w-full">{event.buttonText}</div>
                   </AccordionTrigger>
                   <AccordionContent className="mt-4 rounded-lg bg-gray-50 p-4">
-                    <p className="mb-1 font-semibold">
+                    {event.details.location ? (
+                      <p className="mb-1 font-semibold">
                       Location: {event.details.location}
-                    </p>
+                    </p>) : null}
                     <p className="font-semibold">Deadlines:</p>
                     <ul className="mb-3 ml-4 list-disc">
                       <li>
                         Sign Up Deadline: {event.details.deadlines.signup}
                       </li>
-                      <li>Fees Deadline: {event.details.deadlines.fees}</li>
-                      <li>Drop Deadline: {event.details.deadlines.drop}</li>
+                      {event.details.deadlines.fees ? (
+                        <li>Fees Deadline: {event.details.deadlines.fees}</li>
+                      ) : null}
+                      {event.details.deadlines.drop ? (
+                        <li>Drop Deadline: {event.details.deadlines.drop}</li>
+                      ) : null}
                     </ul>
                     <Link
                       href={event.details.moreInfoLink}

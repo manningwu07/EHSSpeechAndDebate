@@ -61,6 +61,7 @@ export default function StudentsPage({ adminContent, adminError }: PageProps) {
         return (
           <CalendarPage
             upcomingDates={content.students.upcomingDates}
+            calendarLink={content.students.calendarLink}
           />
         );
       case "tournament info":
@@ -76,7 +77,7 @@ export default function StudentsPage({ adminContent, adminError }: PageProps) {
 
   return (
     <>
-      <Navbar {...navigation.navigation} />
+      <Navbar links = {navigation.navigation.links} joinLink={content.components.joinLink}/>
       <Sidebar
         menuItems={menuItems}
         selectedSection={selectedSection}
@@ -121,7 +122,6 @@ function ResourcesPage({
         ))}
       </ul>
 
-      {/* Add in an FAQ */}
     </div>
   );
 }

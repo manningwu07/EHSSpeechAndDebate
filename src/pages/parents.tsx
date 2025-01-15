@@ -64,7 +64,7 @@ export default function ParentsPage({ adminContent, adminError }: PageProps) {
 
   return (
     <>
-      <Navbar {...navigation.navigation} />
+      <Navbar links = {navigation.navigation.links} joinLink={content.components.joinLink}/>
       <Sidebar
         menuItems={menuItems}
         selectedSection={selectedSection}

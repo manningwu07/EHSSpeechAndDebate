@@ -1,7 +1,7 @@
 // Modify the datastructure to match the website
 
 // Disclaimers
-// DO NOT USE ARRAYS, IF YOU NEED TO, MAKE THE ELEMENTS OBJECTS WITH 1 ATTRBUTES {"paragraph": "insert_text"}[] 
+// DO NOT USE ARRAYS, IF YOU NEED TO, MAKE THE ELEMENTS OBJECTS WITH 1 ATTRBUTES {"paragraph": "insert_text"}[]
 // THIS DOES NOT AFFECT NAVBAR/FOOTER ITEMS
 // DOES NOT MOBILE DESIGN ADAPT
 
@@ -19,16 +19,20 @@ export interface DataStructure {
       link: string;
       cta: string;
     };
+    joinLink: string;
   };
 
   landing: {
     gallary: {
-      imageSrc: string; 
+      imageSrc: string;
     }[];
     whyJoin: {
       title: string;
       reason: string;
       imageSrc: string;
+      accolades: {
+        paragraph: string;
+      }[];
     };
     whatYouGet: {
       title: string;
@@ -58,29 +62,33 @@ export interface DataStructure {
       };
       imageSrc: string;
     };
-    faq:{
+    faq: {
       title: string;
       subtitle: string;
       faqData: {
         question: string;
         answer: string;
-      }[]
-    }
+      }[];
+    };
   };
   aeroAdvantage: {
-    title: string;
-    description: string;
-    priceText: string;
-    photos:{
+    opener: {
+      cta: string;
+      title: string;
+      description: string;
+      priceText: string;
+    };
+
+    photos: {
       imageSrc: string;
-    }[]
+    }[];
     locationAndDatesSection: {
       title: string;
-      locationsAndDates:{
+      locationsAndDates: {
         location: string;
         date: string;
         time: string;
-      }[] 
+      }[];
     };
     teamTitle: string;
     teamMembers: {
@@ -89,28 +97,29 @@ export interface DataStructure {
       imageSrc: string;
     }[];
   };
-  about:{
+  about: {
     mission: {
       title: string;
       description: string;
       imageSrc: string;
-    },
-    board:{
-      students:{
+    };
+    board: {
+      students: {
         name: string;
         position: string;
         department: string;
         imageSrc: string;
-      }[],
-      parents:{
+      }[];
+      parents: {
         name: string;
         position: string;
         department: string;
         imageSrc: string;
-      }[]
-    }
-  }
+      }[];
+    };
+  };
   students: {
+    calendarLink: string;
     upcomingEvents: {
       date: string;
       title: string;
@@ -134,10 +143,9 @@ export interface DataStructure {
       type: string;
     }[];
     tournamentInfo: {
-      interest: {paragraph: string}[];
-      competing: {paragraph: string}[];
-      guidelines: {paragraph: string}[];
-    };
+      header: string;
+      description: { paragraph: string }[];
+    }[];
     resources: {
       href: string;
       text: string;
@@ -159,13 +167,16 @@ export interface DataStructure {
         href: string;
       }[];
       trainingVideosTitle: string;
-      trainingVideos: string[];
+      trainingVideos: {
+        label: string;
+        href: string;
+      }[];
       ballotTitle: string;
       ballotDescription: string;
-      ballotImage: string;
+      ballotImage: { src: string; captions: string };
       paradigmTitle: string;
       paradigmDescription: string;
-      paradigmImage: string;
+      paradigmImage: { src: string; captions: string };
       tabroomTitle: string;
       tabroomDescription: string;
       tabroomLink: string;

@@ -35,10 +35,22 @@ export function renderEditField(
         ))}
         <Button
           onClick={() => {
-            const newItem = { ...value[0] };
-            Object.keys(newItem).forEach((key) => {
-              if (typeof newItem[key] === "string") newItem[key] = "";
-            });
+            // 1. Deep clone by serializing + deserializing
+            const newItem = JSON.parse(JSON.stringify(value[0]));
+
+            // 2. Recursively clear out string fields
+            function clearStrings(obj: any) {
+              for (const key in obj) {
+                if (typeof obj[key] === "string") {
+                  obj[key] = "";
+                } else if (obj[key] && typeof obj[key] === "object") {
+                  clearStrings(obj[key]);
+                }
+              }
+            }
+
+            clearStrings(newItem);
+            
             handleEdit(path, [...value, newItem]);
           }}
           variant="outline"

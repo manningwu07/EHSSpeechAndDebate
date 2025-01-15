@@ -10,12 +10,12 @@ import { PreviewPane } from "./PreviewPane";
 import { EmailManagementDialog } from "./emailManagementDialog";
 import { fetchFullContent } from "~/utils/pageUtils";
 // To fundementally change the datastructure or add new nav links:
-// Go to to line 102 and add/delete nav links
+// Go to to line 108 and add/delete nav links
 // Go to DeployDialog and line 34 (add/delete sections of content.json when shipping to firebase)
-// Go to PreviewPane and add/deelete pages
+// Go to PreviewPane and add/delete pages
 
-// Go to PageUtils and line 57 + imports (uncomment)
-// Go to PageUtils and line 96 (uncomment)
+// Go to /utils/PageUtils and line 57 + imports (uncomment)
+// Go to /utils/PageUtils and line 97 (uncomment)
 // import initalContent from "~/content.json";
 
 export default function AdminInterface() {

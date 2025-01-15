@@ -39,7 +39,7 @@ export default function LandingPage({ adminContent, adminError }: PageProps) {
 
   return (
     <div className="mx-0 min-h-screen bg-white">
-      <Navbar {...navigation.navigation} />
+      <Navbar links = {navigation.navigation.links} joinLink={content.components.joinLink}/>
       <main className="mx-auto px-2 pb-6 sm:px-4 lg:px-6 2xl:px-8">
         <Hero hero = {content.components.hero} gallary={content.landing.gallary} />
         <WhyJoin {...content.landing.whyJoin} />

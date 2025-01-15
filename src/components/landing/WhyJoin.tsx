@@ -6,24 +6,18 @@ interface WhyJoinProps {
   title: string;
   reason: string;
   imageSrc: string;
+  accolades: {paragraph: string}[];
 }
 
 export default function WhyJoinSection({
   title,
   reason,
   imageSrc,
+  accolades,
 }: WhyJoinProps) {
-  const awards = [
-    { award: "NSDA TOP 20 TEAM IN DEBATE" },
-    { award: "2024 NSDA DEBATE SCHOOL OF EXCELLENCE" },
-    { award: "2023 NSDA TOP 20" },
-    { award: "Best Debate Team" },
-    { award: "National Champions" },
-  ];
-
   return (
     <section className="bg-slate-50 py-6" id="why-join">
-      <Accolades awards={awards} />
+      <Accolades accolades={accolades} />
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid items-start gap-8 md:grid-cols-2">
           <div>
@@ -54,10 +48,10 @@ export default function WhyJoinSection({
 }
 
 interface AccoladesProps {
-  awards: { award: string }[];
+  accolades: { paragraph: string }[];
 }
 
-function Accolades({ awards }: AccoladesProps) {
+function Accolades({ accolades }: AccoladesProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -97,13 +91,12 @@ function Accolades({ awards }: AccoladesProps) {
               "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
           }}
         >
-          {/* Double the stories array to create a seamless loop */}
-          {[...awards, ...awards, ...awards, ...awards].map((award, index) => (
+          {[...accolades, ...accolades, ...accolades, ...accolades].map((accolade, index) => (
           <span
             key={index}
             className="inline-block py-2 font-bold text-darkBlue text-xl"
           >
-            {award.award}&nbsp;&nbsp;•&nbsp;&nbsp;
+            {accolade.paragraph}&nbsp;&nbsp;•&nbsp;&nbsp;
           </span>
         ))}
         </div>

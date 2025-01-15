@@ -1,10 +1,15 @@
 import { Calendar as CalendarIcon } from "lucide-react";
-import Image from "next/image";
 import type { DataStructure } from "~/utils/dataStructure";
 
-export default function CalendarPage({upcomingDates}: {upcomingDates: DataStructure["students"]["upcomingDates"]}) {
+export default function CalendarPage({
+  upcomingDates,
+  calendarLink,
+}: {
+  upcomingDates: DataStructure["students"]["upcomingDates"];
+  calendarLink: string;
+}) {
   return (
-    <div className="grid gap-8 md:grid-cols-2">
+    <div className="grid gap-8 2xl:grid-cols-[300px_1fr]">
       <div className="space-y-6">
         <div className="flex items-center gap-2">
           <CalendarIcon className="h-6 w-6 text-darkGreen" />
@@ -25,13 +30,15 @@ export default function CalendarPage({upcomingDates}: {upcomingDates: DataStruct
         </div>
       </div>
 
-      <div className="rounded-lg bg-white p-6 shadow-lg">
-        <Image
-          src="/placeholder.svg?height=400&width=400"
-          alt="Calendar View"
-          width={400}
-          height={400}
-          className="h-auto w-full"
+      <div className="rounded-lg bg-white p-6 shadow-lg hidden lg:block">
+        <iframe
+          src={calendarLink}
+          className="w-full"
+          height="800"
+          style={{ border: 0 }}
+          frameBorder="0"
+          scrolling="no"
+          title="Team Calendar"
         />
       </div>
     </div>
