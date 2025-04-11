@@ -5,7 +5,7 @@
         {"text": "About Us", "href": "/about"},
         {"text": "Students", "href": "/students"},
         {"text": "Parents", "href": "/parents"},
-        {"text": "Join", "href": "/", "join": true}
+        {"text": "Join", "href": "https://forms.gle/uhde3nZpReb1bZJY8", "join": true}
       ]
     },
     "footer": {
@@ -18,17 +18,17 @@
         {
           "title": "Links",
           "items": [
-            { "text": "Schedule", "href": "/schedule" },
-            { "text": "Resources", "href": "/resources" },
-            { "text": "Contact", "href": "/contact" }
+            { "text": "Schedule", "href": "https://calendar.google.com/calendar/u/0/embed?src=ehsdebateclub24@gmail.com&ctz=America/Los_Angeles" },
+            { "text": "Resources", "href": "/students" },
+            { "text": "Contact", "href": "mailto:ehsdebateclub24@gmail.com" }
           ]
         },
         {
           "title": "Resources",
           "items": [
-            { "text": "Practice Materials", "href": "/materials" },
-            { "text": "Tournament Info", "href": "/tournaments" },
-            { "text": "FAQs", "href": "/faqs" }
+            { "text": "Practice Materials", "href": "/students" },
+            { "text": "Tournament Info", "href": "/students" },
+            { "text": "FAQs", "href": "/" }
           ]
         }
       ]
